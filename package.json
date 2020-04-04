@@ -1,0 +1,54 @@
+{
+  "name": "webcomponents-starter-ts-lit-snowpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "public/index.js",
+  "scripts": {
+    "build:watch": "tsc --sourcemap true -w & browser-sync start --browser firefox --server --port 5000 --watch --files public/ --serveStatic public/",
+    "build:dev": "tsc --sourcemap true; snowpack",
+    "build:publish": "tsc; snowpack --optimize --nomodule public/index.js",
+    "clean": "rimraf public/*.{js,js.map} public/web_modules",
+    "prepare": "snowpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "rimraf": "^3.0.2",
+    "snowpack": "^1.6.0",
+    "typescript": "^3.8.3"
+  },
+  "snowpack": {
+    "webDependencies": [
+      "lit-element",
+      "lit-html"
+    ],
+    "installOptions": {
+      "dest": "public/web_modules",
+      "clean": false,
+      "optimize": false,
+      "babel": false,
+      "include": "public/**/*.{js,jsx,ts,tsx}",
+      "exclude": [
+        "**/__tests__/*",
+        "**/*.@(spec\\|test).@(js\\|mjs)"
+      ],
+      "strict": true,
+      "sourceMap": true,
+      "remotePackage": [],
+      "remoteUrl": "https://cdn.pika.dev"
+    },
+    "namedExports": {},
+    "dedupe": [
+      "lit-element",
+      "lit-html"
+    ],
+    "rollup": {
+      "plugins": []
+    }
+  },
+  "dependencies": {
+    "lit-element": "^2.3.1",
+    "lit-html": "^1.2.1"
+  }
+}
