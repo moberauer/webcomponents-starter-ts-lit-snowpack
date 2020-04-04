@@ -4,7 +4,7 @@
   "description": "",
   "main": "public/index.js",
   "scripts": {
-    "build:watch": "tsc --sourcemap true -w & browser-sync start --browser firefox --server --port 5000 --watch --files public/ --serveStatic public/",
+    "build:watch": "tsc --sourcemap true -w & browser-sync start --server --port 5000 --watch --files public/ --serveStatic public/",
     "build:dev": "tsc --sourcemap true; snowpack",
     "build:publish": "tsc; snowpack --optimize --nomodule public/index.js",
     "clean": "rimraf public/*.{js,js.map} public/web_modules",
