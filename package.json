@@ -13,10 +13,10 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.26.14",
     "rimraf": "^3.0.2",
-    "snowpack": "^1.6.0",
-    "typescript": "^3.8.3"
+    "snowpack": "^3.5.2",
+    "typescript": "^4.3.2"
   },
   "snowpack": {
     "webDependencies": [
